@@ -1,0 +1,111 @@
+bootstrap:
+  iterations: 1000
+  confidence: 0.95
+  stratified: true
+hypothesis_tests:
+  alpha: 0.05
+  correction: bonferroni
+  practical_auc_difference: 0.03
+  auc_comparison: delong
+  classification_comparison: mcnemar
+operating_points:
+  screening:
+    sensitivity: 0.95
+    confirmatory_testing: true
+  balanced:
+    threshold: youden
+    confirmatory_testing: false
+clinical_impact:
+  population: 1000
+  idh_prevalence: 0.40
+  outputs:
+    - raw_correct_gain
+    - false_positive_corrected_gain
+    - false_positive_burden
+    - number_needed_to_test
+meta_analysis:
+  estimator: random_effects
+  interval: hartung_knapp_sidik_jonkman
+  outputs:
+    - cochran_q
+    - q_p_value
+    - i_squared
+    - tau_squared
+    - prediction_interval
+  heterogeneity_categories:
+    low: 25
+    moderate: 50
+equity:
+  outputs:
+    - coefficient_of_variation
+    - gini
+    - minimum_maximum_ratio
+    - pairwise_site_gap
+calibration:
+  bins: 10
+  method: temperature_scaling
+  outputs:
+    - expected_calibration_error
+    - maximum_calibration_error
+    - brier_score
+subgroups:
+  age:
+    - younger_than_50
+    - at_least_50
+  grade:
+    - grade_2
+    - grade_3
+    - grade_4
+  subtype:
+    - astrocytoma_idh_mutant
+    - oligodendroglioma
+    - glioblastoma_idh_wildtype
+  infrastructure:
+    - tier_1
+    - tier_1_2
+    - tier_1_3
+    - mixed
+tables:
+  main:
+    - cohort_summary
+    - molecular_classification
+    - generalization_gap
+    - component_ablation
+    - cross_site_heterogeneity
+    - clinical_impact
+  extended:
+    - per_class_performance
+    - hyperparameter_sensitivity
+    - computational_cost
+    - practice_comparators
+  supplementary:
+    - seed_level_idh
+    - seed_level_secondary_targets
+    - seed_level_subtype
+    - full_ebrains_baselines
+    - full_cgga_baselines
+    - backbone_swap
+    - seed_variance
+    - full_configuration
+    - calibration
+    - feature_domain_separability
+    - attention_distribution
+    - subgroup_performance
+    - infrastructure_tier
+    - scanner_manufacturer
+    - training_scale
+    - two_way_anova
+    - convergence
+    - hyperparameter_grid
+    - augmentation_ablation
+    - tile_count
+    - agreement
+    - prevalence_scenarios
+    - clinical_modality_comparison
+    - generalization_all_methods
+artifacts:
+  metrics: csv
+  predictions: csv
+  audit: json
+  manifest_digest: sha256
+  seeds_required: 5

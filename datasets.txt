@@ -1,0 +1,6 @@
+TCGA-GBM and TCGA-LGG | https://portal.gdc.cancer.gov/ | GDC Data Use Certification and dbGaP controls apply by file tier
+EBRAINS Digital Brain Tumour Atlas | https://search.kg.ebrains.eu/instances/Dataset/4d3a9b3c739c4b118e8bcf666b9c4e57 | EBRAINS Data Use Agreement applies
+CGGA | https://www.cgga.org.cn/download.jsp | research access; source-specific terms apply
+GLASS | https://www.synapse.org/glass | Synapse account and GLASS terms of use apply
+REMBRANDT | https://www.cancerimagingarchive.net/collection/rembrandt/ | TCIA Data Usage Policy and collection license apply
+

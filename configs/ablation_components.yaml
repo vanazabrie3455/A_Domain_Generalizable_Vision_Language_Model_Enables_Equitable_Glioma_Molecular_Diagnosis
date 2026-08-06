@@ -1,0 +1,8 @@
+defaults: [main]
+experiments:
+  full: {fsdr_alpha: 0.3, text_boost_beta: 0.5, dcr_weight: 0.1}
+  no_fsdr: {fsdr_alpha: 0.0, text_boost_beta: 0.5, dcr_weight: 0.1}
+  no_text: {fsdr_alpha: 0.3, text_boost_beta: 0.0, dcr_weight: 0.1}
+  no_dcr: {fsdr_alpha: 0.3, text_boost_beta: 0.5, dcr_weight: 0.0}
+  attention_only: {fsdr_alpha: 0.0, text_boost_beta: 0.0, dcr_weight: 0.0}
+

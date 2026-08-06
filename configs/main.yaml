@@ -1,0 +1,40 @@
+seed: 42
+seeds: [42, 123, 256, 389, 512]
+device: cuda
+precision: fp16
+epochs: 200
+batch_size: 1
+gradient_accumulation: 8
+learning_rate: 0.0001
+weight_decay: 0.01
+optimizer: adamw
+scheduler: cosine_warm_restarts
+restart_period: 20
+restart_multiplier: 2
+early_stopping_patience: 20
+feature_dimension: 512
+attention_dimension: 256
+head_hidden_dimension: 256
+dropout: 0.3
+fsdr_alpha: 0.3
+text_boost_beta: 0.5
+dcr_weight: 0.1
+entropy_weight: 0.001
+temperature: 0.07
+ema_momentum: 0.99
+patch_size: 256
+magnification: 20
+microns_per_pixel: 0.5
+background_limit: 0.7
+laplacian_minimum: 50.0
+bootstrap_iterations: 1000
+validation_folds: 5
+held_out: CGGA
+domains: [TCGA, EBRAINS, CGGA, GLASS, REMBRANDT]
+targets: [idh, codeletion, mgmt, subtype]
+output_classes:
+  idh: 2
+  codeletion: 2
+  mgmt: 2
+  subtype: 3
+

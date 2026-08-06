@@ -1,0 +1,6 @@
+fsdr_alpha: [0.0, 0.1, 0.3, 0.5, 1.0]
+text_boost_beta: [0.0, 0.2, 0.5, 1.0, 2.0]
+dcr_weight: [0.0, 0.01, 0.1, 0.5, 1.0]
+learning_rate: [0.00005, 0.0001, 0.0005]
+pooling: [mean, max, gated]
+

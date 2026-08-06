@@ -1,0 +1,53 @@
+lodo:
+  held_out: [TCGA, EBRAINS, CGGA, GLASS, REMBRANDT]
+  seeds: [42, 123, 256, 389, 512]
+  inner_folds: 5
+targets:
+  - idh
+  - codeletion
+  - mgmt
+  - subtype
+backbones:
+  - conch
+  - uni
+  - virchow
+  - ctranspath
+  - resnet50
+component_ablations:
+  - full
+  - without_fsdr
+  - without_text_modulation
+  - without_dcr
+  - conch_clam_no_dg
+domain_baselines:
+  - erm
+  - domain_adversarial
+  - coral
+  - mixup
+  - group_dro
+  - irm
+  - vrex
+normalization:
+  - macenko
+  - reinhard
+  - raw
+training_fraction:
+  - 0.10
+  - 0.25
+  - 0.50
+  - 0.75
+  - 1.00
+primary_outputs:
+  idh:
+    tcga: {auc: 0.955, sd: 0.012}
+    ebrains: {auc: 0.918, sd: 0.018}
+    cgga: {auc: 0.907, sd: 0.021}
+  codeletion:
+    tcga: {auc: 0.921, sd: 0.016}
+    cgga: {auc: 0.885, sd: 0.025}
+  mgmt:
+    tcga: {auc: 0.808, sd: 0.024}
+    cgga: {auc: 0.748, sd: 0.032}
+  subtype:
+    tcga: {auc: 0.965, sd: 0.010}
+    ebrains: {auc: 0.952, sd: 0.014}
